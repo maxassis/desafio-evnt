@@ -6,8 +6,8 @@ import GlobalStyles from "./styles/global";
 function App() {
   return (
     <>
-      {/*<Restaurantes /> */}
-      <Home />
+      <Restaurantes />
+      {/*<Home /> */}
       <GlobalStyles />
     </>
   );

@@ -11,7 +11,7 @@ function Restaurantes() {
       <Header />
       <S.Container>
         <SideBar />
-        <Estabelecimentos></Estabelecimentos>
+        <Estabelecimentos />
       </S.Container>
     </>
   );

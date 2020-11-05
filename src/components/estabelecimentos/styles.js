@@ -50,8 +50,13 @@ export const Nome = styled.p`
   font-size: 15px;
 `;
 
-export const Descricao = styled.p``;
+export const Endereco = styled.p`
+  color: #a5a5a5;
+  font-size: 14px;
+`;
 
 export const Stars = styled.p``;
 
 export const Btn = styled.button``;
+
+export const Btn2 = styled.button``;

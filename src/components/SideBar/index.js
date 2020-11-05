@@ -1,6 +1,6 @@
 import React from "react";
-
 import * as S from "./styles";
+import { FaRegStar } from "react-icons/fa";
 
 function SideBar() {
   return (
@@ -9,19 +9,44 @@ function SideBar() {
         <div>
           <S.Tipo>NOTA:</S.Tipo>
           <div>
-            <S.Inpt type="checkbox" />
+            <S.Inpt type="checkbox" name="1star" />
+            <S.Lbl for="1star">
+              <FaRegStar />
+            </S.Lbl>
           </div>
           <div>
-            <S.Inpt type="checkbox" />
+            <S.Inpt type="checkbox" name="2star" />
+            <S.Lbl for="2star">
+              <FaRegStar />
+              <FaRegStar />
+            </S.Lbl>
           </div>
           <div>
-            <S.Inpt type="checkbox" />
+            <S.Inpt type="checkbox" name="3star" />
+            <S.Lbl for="3star">
+              <FaRegStar />
+              <FaRegStar />
+              <FaRegStar />
+            </S.Lbl>
           </div>
           <div>
-            <S.Inpt type="checkbox" />
+            <S.Inpt type="checkbox" name="4star" />
+            <S.Lbl for="4star">
+              <FaRegStar />
+              <FaRegStar />
+              <FaRegStar />
+              <FaRegStar />
+            </S.Lbl>
           </div>
           <div>
-            <S.Inpt type="checkbox" />
+            <S.Inpt type="checkbox" name="5star" />
+            <S.Lbl for="5star">
+              <FaRegStar />
+              <FaRegStar />
+              <FaRegStar />
+              <FaRegStar />
+              <FaRegStar />
+            </S.Lbl>
           </div>
         </div>
         <div>
