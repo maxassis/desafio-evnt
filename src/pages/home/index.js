@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import logowhite from "../../components/assets/logo-white.jpg";
+import iconmap from "../../components/assets/map-marker-alt-solid.svg";
 
 function Home() {
   return (
