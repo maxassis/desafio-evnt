@@ -7,10 +7,10 @@ function Header() {
     <>
       <S.Container>
         <div>
-          <img src={LogoRed} alt="logo vermelho" />
+          <S.Logo src={LogoRed} alt="logo vermelho" />
         </div>
         <div>
-          <S.Inpt></S.Inpt>
+          <S.Inpt placeholder="Digite sua cidade"></S.Inpt>
           <S.Btn>BUSCAR</S.Btn>
         </div>
       </S.Container>
