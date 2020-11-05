@@ -21,6 +21,8 @@ export const Inpt = styled.input`
   font-weight: 300;
   color: #767676;
   border: 1px solid #e8e8e8;
+  padding: 0rem 0rem 0rem 3rem;
+  outline: 0;
 `;
 
 export const Btn = styled.button`

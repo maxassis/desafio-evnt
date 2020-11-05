@@ -1,4 +1,5 @@
 import React from "react";
+import Estabelecimentos from "../../components/estabelecimentos";
 import Header from "../../components/Header";
 import SideBar from "../../components/SideBar";
 
@@ -8,7 +9,10 @@ function Restaurantes() {
   return (
     <>
       <Header />
-      <SideBar />
+      <S.Container>
+        <SideBar />
+        <Estabelecimentos></Estabelecimentos>
+      </S.Container>
     </>
   );
 }

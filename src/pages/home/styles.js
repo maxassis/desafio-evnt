@@ -38,6 +38,8 @@ export const Input = styled.input`
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   color: #767676;
+  padding: 0rem 0rem 0rem 3rem;
+  outline: 0;
 `;
 
 export const Button = styled.button`

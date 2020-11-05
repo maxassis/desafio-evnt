@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 230px;
-  height: 85vh;
+  width: 220px;
+  height: 85.5vh;
   margin-top: 9px;
   margin-left: 10px;
   border: 1px solid;
@@ -25,7 +25,8 @@ export const Tipo = styled.p`
   font-weight: 100;
   color: #a5a5a5;
   font-size: 14px;
-  margin-top: 15px;
+  margin-top: 11px;
+  margin-bottom: 5px;
   margin-left: 20px;
 `;
 
