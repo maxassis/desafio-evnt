@@ -2,6 +2,7 @@ import React from "react";
 import * as S from "./styles";
 import pizza from "../assets/pizza.webp";
 import { FaStar } from "react-icons/fa";
+import { FaUserFriends } from "react-icons/fa";
 
 function Estabelecimentos() {
   return (
@@ -17,10 +18,17 @@ function Estabelecimentos() {
               <S.Nome>Nome do Restaurante</S.Nome>
               <S.Endereco>Rua Comandante Ituriel, n 1612</S.Endereco>
               <S.Stars>
-                <FaStar />
+                <FaStar style={{ color: "#39b54a", width: "13px" }} />
+                <FaStar style={{ color: "#39b54a", width: "13px" }} />
+                <FaStar style={{ color: "#39b54a", width: "13px" }} />
               </S.Stars>
-              <S.Btn></S.Btn>
-              <S.Btn2></S.Btn2>
+              <S.Btn>
+                <FaUserFriends
+                  style={{ color: "#FFF", width: "17px", marginRight: "9px" }}
+                />
+                R$ 100,00
+              </S.Btn>
+              <S.Btn2>Japonesa</S.Btn2>
             </S.Dados>
           </S.Produto>
         </S.GridProdutos>

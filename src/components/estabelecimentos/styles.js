@@ -48,15 +48,35 @@ export const Nome = styled.p`
   font-family: "Open Sans", sans-serif;
   color: #333;
   font-size: 15px;
+  font-weight: 600;
+  margin-left: 15px;
 `;
 
 export const Endereco = styled.p`
   color: #a5a5a5;
   font-size: 14px;
+  font-weight: 300;
+  margin-left: 15px;
+  margin-top: 4px;
 `;
 
-export const Stars = styled.p``;
+export const Stars = styled.p`
+  margin-left: 15px;
+  margin-top: 4px;
+`;
 
-export const Btn = styled.button``;
+export const Btn = styled.button`
+  width: 8vw;
+  height: 4vh;
+  background-color: #39b54a;
+  margin-left: 15px;
+  margin-top: 10px;
+  border: none;
+`;
 
-export const Btn2 = styled.button``;
+export const Btn2 = styled.button`
+  width: 8vw;
+  height: 4vh;
+  margin-left: 10px;
+  border: none;
+`;
