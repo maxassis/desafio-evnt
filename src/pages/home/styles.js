@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 import bgimg from "../../components/assets/bg1.jpg";
 
 export const Container = styled.div`
@@ -28,21 +29,19 @@ export const Texto = styled.h1`
   font-size: 3rem;
   font-weight: 800;
   line-height: 50px;
+  margin-bottom: 0px;
 `;
 
-export const Input = styled.input`
-  width: 40vw;
-  height: 6.5vh;
-  border: none;
+export const AutoComp = styled(Autocomplete)`
+  display: inline-block;
   margin-top: 35px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  color: #767676;
-  padding: 0rem 0rem 0rem 3rem;
-  outline: 0;
+  width: 40vw;
+  background-color: white;
 `;
 
 export const Button = styled.button`
+  position: relative;
+  top: 12px;
   color: #fff;
   background-color: #39b54a;
   border: none;
@@ -50,7 +49,7 @@ export const Button = styled.button`
   font-size: 16px;
   font-weight: 600;
   width: 15vw;
-  height: 6.5vh;
+  height: 6vh;
   margin-left: 10px;
-  margin-top: 35px;
+  margin-top: 5px;
 `;
