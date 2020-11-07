@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import * as S from "./styles";
 import logowhite from "../../components/assets/logo-white.jpg";
 import TextField from "@material-ui/core/TextField";
 
 function Home() {
+  const history = useHistory();
   const [lugar, setLugar] = useState("sao paulo");
   const [escolhido, setEscolhido] = useState("");
 
@@ -28,6 +30,10 @@ function Home() {
       });
   }, [lugar]);
 
+  const proxPagina = () => {
+    history.push("/restaurantes");
+  };
+
   return (
     <>
       <S.Container>
@@ -41,7 +47,7 @@ function Home() {
               <br /> restaurantes em sua cidade
             </S.Texto>
           </div>
-          <div>
+          <form onSubmit={proxPagina}>
             <S.AutoComp
               id="combo-box-demo"
               options={escolhido}
@@ -50,6 +56,7 @@ function Home() {
                 <TextField
                   {...params}
                   placeholder="Digite sua cidade"
+                  required
                   size="small"
                   variant="outlined"
                   onChange={inputDados}
@@ -57,8 +64,8 @@ function Home() {
                 />
               )}
             />
-            <S.Button>BUSCAR</S.Button>
-          </div>
+            <S.Button type="submit">BUSCAR</S.Button>
+          </form>
         </S.ContainerCentral>
       </S.Container>
     </>
