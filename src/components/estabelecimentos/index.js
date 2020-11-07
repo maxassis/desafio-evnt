@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import axios from "axios";
 import * as S from "./styles";
 import pizza from "../assets/pizza.webp";
 import { FaStar } from "react-icons/fa";
@@ -7,7 +8,27 @@ import { StateContext } from "../../context/index";
 
 function Estabelecimentos() {
   const [dados] = useContext(StateContext);
-  console.log(dados.title);
+  const [lojas, setLojas] = useState("");
+  //console.log(dados.title);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://developers.zomato.com/api/v2.1/location_details?entity_id=${dados.entity_id}&entity_type=${dados.entity_type}`,
+        {
+          headers: {
+            "user-key": "0f0709faa524595d78efbf821cc36f94",
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+        //setEscolhido(response.data.location_suggestions);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }, [dados]);
 
   return (
     <>
