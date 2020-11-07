@@ -1,7 +1,25 @@
 import React from "react";
 import * as S from "./styles";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 import LogoRed from "../assets/logo-red.jpg";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import styled from "styled-components";
+
+const Plete = styled(Autocomplete)`
+  width: 60vw;
+  display: inline-block;
+  margin-bottom: 13px;
+  border-radius: 0;
+`;
+
+const top100Films = [
+  { title: "The Shawshank Redemption", year: 1994 },
+  { title: "The Godfather", year: 1972 },
+  { title: "The Godfather: Part II", year: 1974 },
+  { title: "The Dark Knight", year: 2008 },
+  { title: "12 Angry Men", year: 1957 },
+  { title: "Schindler's List", year: 1993 },
+];
 
 function Header() {
   return (
@@ -11,18 +29,19 @@ function Header() {
           <S.Logo src={LogoRed} alt="logo vermelho" />
         </div>
         <div>
-          <FaMapMarkerAlt
-            style={{
-              marginLeft: "1.2rem",
-              marginTop: "0.5rem",
-              position: "absolute",
-              width: "13px",
-              color: "#767676",
-            }}
-            color="#767676"
-            size="1.5em"
+          <Plete
+            id="combo-box-demo"
+            options={top100Films}
+            getOptionLabel={(option) => option.title}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                placeholder="Digite a sua cidade"
+                size="small"
+                variant="outlined"
+              />
+            )}
           />
-          <S.Inpt placeholder="Digite a sua cidade"></S.Inpt>
           <S.Btn>BUSCAR</S.Btn>
         </div>
       </S.Container>

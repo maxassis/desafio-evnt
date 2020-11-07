@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 7vw;
+  width: 8vw;
 `;
 
 export const Inpt = styled.input`
@@ -26,6 +26,8 @@ export const Inpt = styled.input`
 `;
 
 export const Btn = styled.button`
+  position: relative;
+  top: 11px;
   width: 15vw;
   height: 6vh;
   background-color: #39b54a;
