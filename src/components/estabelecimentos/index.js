@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as S from "./styles";
 import pizza from "../assets/pizza.webp";
 import { FaStar } from "react-icons/fa";
 import { FaUserFriends } from "react-icons/fa";
+import { StateContext } from "../../context/index";
 
 function Estabelecimentos() {
+  const [dados] = useContext(StateContext);
+  console.log(dados.title);
+
   return (
     <>
       <S.Container>
         <S.HeaderLocal>
-          <S.Local>Restaurantes em Rio de Janeiro</S.Local>
+          <S.Local>Restaurantes em {dados.title}</S.Local>
         </S.HeaderLocal>
         <S.GridProdutos>
           <S.Produto>

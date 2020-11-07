@@ -1,14 +1,16 @@
 import React from "react";
-//import Home from "./pages/Home";
 import Router from "./router";
-//import Restaurantes from "./pages/Restaurantes";
+import { EstadoProvider } from "./context/index";
+
 import GlobalStyles from "./styles/global";
 
 function App() {
   return (
     <>
-      <Router />
-      <GlobalStyles />
+      <EstadoProvider>
+        <Router />
+        <GlobalStyles />
+      </EstadoProvider>
     </>
   );
 }

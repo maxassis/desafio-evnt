@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 export const Container = styled.div`
   width: 100%;
@@ -37,4 +38,11 @@ export const Btn = styled.button`
   font-weight: 600;
   border: none;
   margin-left: 6px;
+`;
+
+export const Complete = styled(Autocomplete)`
+  width: 60vw;
+  display: inline-block;
+  margin-bottom: 13px;
+  border-radius: 0;
 `;

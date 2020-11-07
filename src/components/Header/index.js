@@ -1,27 +1,40 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import * as S from "./styles";
+import axios from "axios";
 import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
 import LogoRed from "../assets/logo-red.jpg";
-import styled from "styled-components";
+import { StateContext } from "../../context/index";
 
-const Plete = styled(Autocomplete)`
-  width: 60vw;
-  display: inline-block;
-  margin-bottom: 13px;
-  border-radius: 0;
-`;
+function Header(props) {
+  const [lugar, setLugar] = useState("los angeles");
+  const [escolhido, setEscolhido] = useState("");
+  const [dados, setDados] = useContext(StateContext);
+  console.log(dados.title);
 
-const top100Films = [
-  { title: "The Shawshank Redemption", year: 1994 },
-  { title: "The Godfather", year: 1972 },
-  { title: "The Godfather: Part II", year: 1974 },
-  { title: "The Dark Knight", year: 2008 },
-  { title: "12 Angry Men", year: 1957 },
-  { title: "Schindler's List", year: 1993 },
-];
+  const inputDados = (event) => {
+    setLugar(event.target.value);
+  };
 
-function Header() {
+  useEffect(() => {
+    axios
+      .get(`https://developers.zomato.com/api/v2.1/locations?query=${lugar}`, {
+        headers: {
+          "user-key": "0f0709faa524595d78efbf821cc36f94",
+        },
+      })
+      .then((response) => {
+        // console.log(response.data.location_suggestions);
+        setEscolhido(response.data.location_suggestions);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }, [lugar]);
+
+  function busca() {
+    setDados(...escolhido);
+  }
+
   return (
     <>
       <S.Container>
@@ -29,9 +42,9 @@ function Header() {
           <S.Logo src={LogoRed} alt="logo vermelho" />
         </div>
         <div>
-          <Plete
+          <S.Complete
             id="combo-box-demo"
-            options={top100Films}
+            options={escolhido}
             getOptionLabel={(option) => option.title}
             renderInput={(params) => (
               <TextField
@@ -39,10 +52,12 @@ function Header() {
                 placeholder="Digite a sua cidade"
                 size="small"
                 variant="outlined"
+                onChange={inputDados}
+                value={lugar}
               />
             )}
           />
-          <S.Btn>BUSCAR</S.Btn>
+          <S.Btn onClick={busca}>BUSCAR</S.Btn>
         </div>
       </S.Container>
     </>
