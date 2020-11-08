@@ -6,7 +6,7 @@ import LogoRed from "../assets/logo-red.jpg";
 import { StateContext } from "../../context/index";
 
 function Header(props) {
-  const [lugar, setLugar] = useState("los angeles");
+  const [lugar, setLugar] = useState("sao paulo");
   const [escolhido, setEscolhido] = useState("");
   const [dados, setDados] = useContext(StateContext);
   console.log(dados.title);

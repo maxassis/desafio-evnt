@@ -32,8 +32,8 @@ function Home() {
       });
   }, [lugar]);
 
-  const proxPagina = () => {
-    setDados(...escolhido);
+  const proxPagina = async () => {
+    await setDados(...escolhido);
     history.push("/restaurantes");
   };
 

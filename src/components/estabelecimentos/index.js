@@ -8,13 +8,13 @@ import { StateContext } from "../../context/index";
 
 function Estabelecimentos() {
   const [dados] = useContext(StateContext);
-  const [lojas, setLojas] = useState("");
-  //console.log(dados.title);
+  const [resposta, setResposta] = useState("");
+  //console.log(dados);
 
   useEffect(() => {
     axios
       .get(
-        `https://developers.zomato.com/api/v2.1/location_details?entity_id=${dados.entity_id}&entity_type=${dados.entity_type}`,
+        `https://developers.zomato.com/api/v2.1/location_details?entity_id=67&entity_type=city`,
         {
           headers: {
             "user-key": "0f0709faa524595d78efbf821cc36f94",
@@ -22,13 +22,15 @@ function Estabelecimentos() {
         }
       )
       .then((response) => {
-        console.log(response.data);
-        //setEscolhido(response.data.location_suggestions);
+        //console.log(response);
+        setResposta(response.data);
       })
       .catch((error) => {
         console.log(error.response);
       });
   }, [dados]);
+
+  console.log(resposta);
 
   return (
     <>
@@ -37,25 +39,37 @@ function Estabelecimentos() {
           <S.Local>Restaurantes em {dados.title}</S.Local>
         </S.HeaderLocal>
         <S.GridProdutos>
-          <S.Produto>
-            <S.Img src={pizza} alt="pizza" />
-            <S.Dados>
-              <S.Nome>Nome do Restaurante</S.Nome>
-              <S.Endereco>Rua Comandante Ituriel, n 1612</S.Endereco>
-              <S.Stars>
-                <FaStar style={{ color: "#39b54a", width: "13px" }} />
-                <FaStar style={{ color: "#39b54a", width: "13px" }} />
-                <FaStar style={{ color: "#39b54a", width: "13px" }} />
-              </S.Stars>
-              <S.Btn>
-                <FaUserFriends
-                  style={{ color: "#FFF", width: "17px", marginRight: "9px" }}
-                />
-                R$ 100,00
-              </S.Btn>
-              <S.Btn2>Japonesa</S.Btn2>
-            </S.Dados>
-          </S.Produto>
+          {resposta !== "" ? (
+            resposta.best_rated_restaurant.map(function (user) {
+              return (
+                <S.Produto>
+                  <S.Img src={user.restaurant.thumb} alt="pizza" />
+                  <S.Dados>
+                    <S.Nome>{user.restaurant.name}</S.Nome>
+                    <S.Endereco>{user.restaurant.location.address}</S.Endereco>
+                    <S.Stars>
+                      <FaStar style={{ color: "#39b54a", width: "13px" }} />
+                      <FaStar style={{ color: "#39b54a", width: "13px" }} />
+                      <FaStar style={{ color: "#39b54a", width: "13px" }} />
+                    </S.Stars>
+                    <S.Btn>
+                      <FaUserFriends
+                        style={{
+                          color: "#FFF",
+                          width: "17px",
+                          marginRight: "9px",
+                        }}
+                      />
+                      {user.restaurant.average_cost_for_two}
+                    </S.Btn>
+                    <S.Btn2>{user.restaurant.cuisines}</S.Btn2>
+                  </S.Dados>
+                </S.Produto>
+              );
+            })
+          ) : (
+            <h1>Loading</h1>
+          )}
         </S.GridProdutos>
       </S.Container>
     </>

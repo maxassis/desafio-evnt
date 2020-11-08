@@ -4,7 +4,7 @@ export const StateContext = createContext();
 
 export function EstadoProvider(props) {
   //const [dados, setDados] = useState("")
-  const [dados, setDados] = useState("");
+  const [dados, setDados] = useState("sao paulo");
 
   return (
     <>
