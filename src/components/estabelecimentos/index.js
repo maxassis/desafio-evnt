@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import * as S from "./styles";
-import pizza from "../assets/pizza.webp";
+import food3 from "../assets/food3.png";
 import { FaStar } from "react-icons/fa";
 import { FaUserFriends } from "react-icons/fa";
 import { StateContext } from "../../context/index";
@@ -9,12 +9,12 @@ import { StateContext } from "../../context/index";
 function Estabelecimentos() {
   const [dados] = useContext(StateContext);
   const [resposta, setResposta] = useState("");
-  //console.log(dados);
+  console.log(dados.entity_id);
 
   useEffect(() => {
     axios
       .get(
-        `https://developers.zomato.com/api/v2.1/location_details?entity_id=67&entity_type=city`,
+        `https://developers.zomato.com/api/v2.1/location_details?entity_id=${dados.entity_id}&entity_type=${dados.entity_type}`,
         {
           headers: {
             "user-key": "0f0709faa524595d78efbf821cc36f94",
@@ -43,7 +43,11 @@ function Estabelecimentos() {
             resposta.best_rated_restaurant.map(function (user) {
               return (
                 <S.Produto>
-                  <S.Img src={user.restaurant.thumb} alt="pizza" />
+                  {user.restaurant.thumb === "" ? (
+                    <S.Img src={food3} alt="brave" />
+                  ) : (
+                    <S.Img src={user.restaurant.thumb} alt="restaurante" />
+                  )}
                   <S.Dados>
                     <S.Nome>{user.restaurant.name}</S.Nome>
                     <S.Endereco>{user.restaurant.location.address}</S.Endereco>
