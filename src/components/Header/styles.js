@@ -13,23 +13,15 @@ export const Container = styled.div`
 
 export const Logo = styled.img`
   width: 8vw;
+  margin-left: 20px;
 `;
 
-export const Inpt = styled.input`
-  width: 60vw;
-  height: 6vh;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  color: #767676;
-  border: 1px solid #e8e8e8;
-  padding: 0rem 0rem 0rem 3rem;
-  outline: 0;
-`;
+export const ContainerInput = styled.div``;
 
 export const Btn = styled.button`
   position: relative;
   top: 11px;
-  width: 15vw;
+  width: 16vw;
   height: 6vh;
   background-color: #39b54a;
   color: #fff;
@@ -41,8 +33,9 @@ export const Btn = styled.button`
 `;
 
 export const Complete = styled(Autocomplete)`
-  width: 60vw;
+  width: 63vw;
   display: inline-block;
   margin-bottom: 13px;
   border-radius: 0;
+  padding-left: 50.3px;
 `;

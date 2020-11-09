@@ -41,7 +41,7 @@ function Header(props) {
         <div>
           <S.Logo src={LogoRed} alt="logo vermelho" />
         </div>
-        <div>
+        <S.ContainerInput>
           <S.Complete
             id="combo-box-demo"
             options={escolhido}
@@ -58,7 +58,7 @@ function Header(props) {
             )}
           />
           <S.Btn onClick={busca}>BUSCAR</S.Btn>
-        </div>
+        </S.ContainerInput>
       </S.Container>
     </>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 220px;
+  width: 200px;
   height: 85.5vh;
   margin-top: 9px;
   margin-left: 10px;
@@ -16,8 +16,6 @@ export const Inpt = styled.input`
   display: inline-block;
   margin-top: 8px;
   margin-left: 20px;
-  border-color: #a5a5a5;
-  color: #a5a5a5;
 `;
 
 export const Tipo = styled.p`

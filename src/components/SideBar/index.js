@@ -32,7 +32,12 @@ function SideBar() {
   function teste() {
     if (resposta !== "") {
       const filtrado = resposta.filter((produto) => {
-        if (produto.restaurant.average_cost_for_two < 100) return produto;
+        // if (produto.restaurant.average_cost_for_two > 50) return produto;
+        if (
+          produto.restaurant.average_cost_for_two > 50 &&
+          produto.restaurant.average_cost_for_two < 80
+        )
+          return produto;
       });
       setResposta(filtrado);
     }
@@ -88,7 +93,7 @@ function SideBar() {
           </div>
         </div>
         <div>
-          <S.Tipo>CUSTO PARA DUAS PESSOAS:</S.Tipo>
+          <S.Tipo>CUSTO PARA 2 PESSOAS:</S.Tipo>
           <div>
             <S.Inpt type="checkbox" name="50" key="01" />
             <S.Lbl for="50">Ate R$ 50,00</S.Lbl>

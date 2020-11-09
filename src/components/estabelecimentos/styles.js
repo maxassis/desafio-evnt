@@ -30,7 +30,7 @@ export const GridProdutos = styled.div`
 `;
 
 export const Produto = styled.div`
-  width: 340px;
+  width: 350px;
   height: 250px;
   //background-color: red;
   border: 1px solid #e8e8e8;
