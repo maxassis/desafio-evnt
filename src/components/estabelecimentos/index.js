@@ -3,6 +3,7 @@ import axios from "axios";
 import * as S from "./styles";
 import food3 from "../assets/food3.png";
 import { FaStar } from "react-icons/fa";
+import Stars from "../stars/index";
 import { FaUserFriends } from "react-icons/fa";
 import { StateContext, StateContext2 } from "../../context/index";
 
@@ -53,9 +54,9 @@ function Estabelecimentos() {
                     <S.Nome>{user.restaurant.name}</S.Nome>
                     <S.Endereco>{user.restaurant.location.address}</S.Endereco>
                     <S.Stars>
-                      <FaStar style={{ color: "#39b54a", width: "13px" }} />
-                      <FaStar style={{ color: "#39b54a", width: "13px" }} />
-                      <FaStar style={{ color: "#39b54a", width: "13px" }} />
+                      <Stars
+                        valor={user.restaurant.user_rating.aggregate_rating}
+                      />
                     </S.Stars>
                     <S.Btn>
                       <FaUserFriends

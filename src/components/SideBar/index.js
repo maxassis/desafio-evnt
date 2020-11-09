@@ -32,12 +32,12 @@ function SideBar() {
   function teste() {
     if (resposta !== "") {
       const filtrado = resposta.filter((produto) => {
-        // if (produto.restaurant.average_cost_for_two > 50) return produto;
-        if (
+        if (produto.restaurant.average_cost_for_two < 50) return produto;
+        /* if (
           produto.restaurant.average_cost_for_two > 50 &&
           produto.restaurant.average_cost_for_two < 80
         )
-          return produto;
+          return produto; */
       });
       setResposta(filtrado);
     }
@@ -47,10 +47,8 @@ function SideBar() {
     <>
       <S.Container>
         <div>
-          <S.Tipo>
-            {/*NOTA:*/}
-            <button onClick={teste}>teste</button>
-          </S.Tipo>
+          <S.Tipo>NOTA:</S.Tipo>
+          <button onClick={teste}></button>
           <div>
             <S.Inpt type="checkbox" name="1star" key="1" />
             <S.Lbl for="1star">
@@ -95,19 +93,41 @@ function SideBar() {
         <div>
           <S.Tipo>CUSTO PARA 2 PESSOAS:</S.Tipo>
           <div>
-            <S.Inpt type="checkbox" name="50" key="01" />
+            <S.Inpt
+              type="checkbox"
+              name="50"
+              key="01"
+              value="produto.restaurant.average_cost_for_two < 50"
+            />
             <S.Lbl for="50">Ate R$ 50,00</S.Lbl>
           </div>
           <div>
-            <S.Inpt type="checkbox" name="50a80" key="02" />
+            <S.Inpt
+              type="checkbox"
+              name="50a80"
+              key="02"
+              value=" produto.restaurant.average_cost_for_two < 50 &&
+          produto.restaurant.average_cost_for_two < 80"
+            />
             <S.Lbl for="50a80">De R$50,00 a R$80,00</S.Lbl>
           </div>
           <div>
-            <S.Inpt type="checkbox" name="80a110" key="03" />
+            <S.Inpt
+              type="checkbox"
+              name="80a110"
+              key="03"
+              value=" produto.restaurant.average_cost_for_two > 80 &&
+          produto.restaurant.average_cost_for_two < 100"
+            />
             <S.Lbl for="80a110">De R$80,00 a R$110,00</S.Lbl>
           </div>
           <div>
-            <S.Inpt type="checkbox" name="acima110" key="04" />
+            <S.Inpt
+              type="checkbox"
+              name="acima110"
+              key="04"
+              value="produto.restaurant.average_cost_for_two > 100"
+            />
             <S.Lbl for="acima110">Acima de R$ 110,00</S.Lbl>
           </div>
         </div>
