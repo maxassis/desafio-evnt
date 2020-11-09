@@ -9,7 +9,7 @@ function Header(props) {
   const [lugar, setLugar] = useState("sao paulo");
   const [escolhido, setEscolhido] = useState("");
   const [dados, setDados] = useContext(StateContext);
-  console.log(dados.title);
+  //console.log(dados.title);
 
   const inputDados = (event) => {
     setLugar(event.target.value);

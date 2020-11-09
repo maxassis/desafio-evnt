@@ -4,12 +4,12 @@ import * as S from "./styles";
 import food3 from "../assets/food3.png";
 import { FaStar } from "react-icons/fa";
 import { FaUserFriends } from "react-icons/fa";
-import { StateContext } from "../../context/index";
+import { StateContext, StateContext2 } from "../../context/index";
 
 function Estabelecimentos() {
   const [dados] = useContext(StateContext);
-  const [resposta, setResposta] = useState("");
-  console.log(dados.entity_id);
+  const [resposta, setResposta] = useContext(StateContext2);
+  //console.log(dados.entity_id);
 
   useEffect(() => {
     axios
@@ -23,14 +23,15 @@ function Estabelecimentos() {
       )
       .then((response) => {
         //console.log(response);
-        setResposta(response.data);
+        setResposta(response.data.best_rated_restaurant);
       })
       .catch((error) => {
         console.log(error.response);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dados]);
 
-  console.log(resposta);
+  //console.log(resposta);
 
   return (
     <>
@@ -40,7 +41,7 @@ function Estabelecimentos() {
         </S.HeaderLocal>
         <S.GridProdutos>
           {resposta !== "" ? (
-            resposta.best_rated_restaurant.map(function (user) {
+            resposta.map(function (user) {
               return (
                 <S.Produto>
                   {user.restaurant.thumb === "" ? (
