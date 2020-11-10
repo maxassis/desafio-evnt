@@ -66,7 +66,7 @@ function Estabelecimentos() {
                           marginRight: "9px",
                         }}
                       />
-                      {user.restaurant.average_cost_for_two}
+                      {user.restaurant.average_cost_for_two},00
                     </S.Btn>
                     <S.Btn2>{user.restaurant.cuisines}</S.Btn2>
                   </S.Dados>
