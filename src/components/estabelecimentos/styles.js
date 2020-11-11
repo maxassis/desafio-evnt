@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 80vw;
   height: 85vh;
-  //background-color: gold;
   margin-top: 9px;
   margin-left: 25px;
   margin-right: auto;
@@ -12,7 +11,6 @@ export const Container = styled.div`
 export const HeaderLocal = styled.div`
   display: flex;
   align-items: center;
-  //background-color: green;
   height: 60px;
 `;
 

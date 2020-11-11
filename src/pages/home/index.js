@@ -46,8 +46,11 @@ function Home() {
         <S.ContainerCentral>
           <div>
             <S.Texto>
-              Descubra os melhores
-              <br /> restaurantes em sua cidade
+              <S.Descricao>
+                {" "}
+                Descubra os melhores
+                <br /> restaurantes em sua cidade
+              </S.Descricao>
             </S.Texto>
           </div>
           <form>

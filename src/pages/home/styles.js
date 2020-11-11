@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import bgimg from "../../components/assets/bg1.jpg";
+import media from "styled-media-query";
 
 export const Container = styled.div`
   width: 100%;
@@ -32,11 +33,41 @@ export const Texto = styled.h1`
   margin-bottom: 0px;
 `;
 
+export const Descricao = styled.p`
+  ${media.lessThan("small")`
+    line-height: 30px;
+    font-size: 2rem;
+    margin: 0 30px 0 30px;
+  `}
+
+  ${media.between("small", "medium")`
+    margin-left:40px;
+    
+    
+  `}
+`;
+
 export const AutoComp = styled(Autocomplete)`
   display: inline-block;
   margin-top: 35px;
   width: 40vw;
   background-color: white;
+
+  ${media.lessThan("small")`
+    display: block;
+    width: 85%;
+    margin: 30px auto 0 auto;
+  `}
+
+  ${media.between("small", "medium")`
+    margin-left:100px;
+    
+    
+  `}
+`;
+
+export const Form = styled.form`
+  display: flex;
 `;
 
 export const Button = styled.button`
@@ -52,4 +83,10 @@ export const Button = styled.button`
   height: 6vh;
   margin-left: 10px;
   margin-top: 5px;
+
+  ${media.lessThan("small")`
+    display: block;
+    width: 85%;
+    margin-left: 27px;
+  `}
 `;

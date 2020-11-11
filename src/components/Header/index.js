@@ -9,7 +9,6 @@ function Header(props) {
   const [lugar, setLugar] = useState("sao paulo");
   const [escolhido, setEscolhido] = useState("");
   const [dados, setDados] = useContext(StateContext);
-  //console.log(dados.title);
 
   const inputDados = (event) => {
     setLugar(event.target.value);
@@ -23,7 +22,6 @@ function Header(props) {
         },
       })
       .then((response) => {
-        // console.log(response.data.location_suggestions);
         setEscolhido(response.data.location_suggestions);
       })
       .catch((error) => {

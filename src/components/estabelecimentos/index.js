@@ -1,8 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import * as S from "./styles";
 import food3 from "../assets/food3.png";
-import { FaStar } from "react-icons/fa";
 import Stars from "../stars/index";
 import { FaUserFriends } from "react-icons/fa";
 import { StateContext, StateContext2 } from "../../context/index";
@@ -10,7 +9,6 @@ import { StateContext, StateContext2 } from "../../context/index";
 function Estabelecimentos() {
   const [dados] = useContext(StateContext);
   const [resposta, setResposta] = useContext(StateContext2);
-  //console.log(dados.entity_id);
 
   useEffect(() => {
     axios
@@ -23,16 +21,12 @@ function Estabelecimentos() {
         }
       )
       .then((response) => {
-        //console.log(response);
         setResposta(response.data.best_rated_restaurant);
       })
       .catch((error) => {
         console.log(error.response);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dados]);
-
-  //console.log(resposta);
 
   return (
     <>
