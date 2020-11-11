@@ -1,6 +1,6 @@
 # Desafio Evnts
 
-Desafio para vaga de Front-End developer na Evnts, consiste em implementar as telas de um e-commerce de comidas, com requisiçoes a Api de restaurantes  do  [Zomato](https://developers.zomato.com/documentation?lang=pt#/)
+Desafio para vaga de Front-End developer na Evnts, consiste em implementar as telas de um e-commerce de restaurantes no estilo Ifood, com requisiçoes a Api de restaurantes  do  [Zomato](https://developers.zomato.com/documentation?lang=pt#/)
 
 
 
